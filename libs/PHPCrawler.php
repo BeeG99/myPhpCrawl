@@ -8,6 +8,7 @@ use PHPCrawler\CookieCache\PHPCrawlerSQLiteCookieCache;
 use PHPCrawler\Enums\PHPCrawlerAbortReasons;
 use PHPCrawler\Enums\PHPCrawlerMultiProcessModes;
 use PHPCrawler\Enums\PHPCrawlerUrlCacheTypes;
+use PHPCrawler\Http\HTTPRequest;
 use PHPCrawler\ProcessCommunication\PHPCrawlerDocumentInfoQueue;
 use PHPCrawler\ProcessCommunication\PHPCrawlerProcessHandler;
 use PHPCrawler\ProcessCommunication\PHPCrawlerStatusHandler;
@@ -31,7 +32,7 @@ class PHPCrawler
     /**
      * The PHPCrawlerHTTPRequest-Object
      *
-     * @var PHPCrawlerHTTPRequest
+     * @var HTTPRequest
      */
     protected $PageRequest;
 
@@ -234,13 +235,10 @@ class PHPCrawler
         // Create uniqid for this crawlerinstance
         $this->crawler_uniqid = getmypid() . time();
 
-        // Include needed class-files
-        $classpath = dirname(__FILE__);
-
         $this->crawerStatus = new PHPCrawlerStatus();
 
         // PageRequest-class
-        $this->PageRequest = new PHPCrawlerHTTPRequest();
+        $this->PageRequest = new HttpRequest();
         $this->PageRequest->setHeaderCheckCallbackFunction($this, "handleHeaderInfo");
 
         // URL-filter-class

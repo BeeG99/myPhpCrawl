@@ -1,5 +1,5 @@
 {
-  "name": "phpcrawl/phpcrawl",
+  "name": "BeeG99/phpcrawl",
   "description": "PHPCrawl is a webcrawler/webspider-library written in PHP. It supports filters, limiters, cookie-handling, robots.txt-handling, multiprocessing and much more.",
   "license": "GPL-v2",
   "authors": [
@@ -8,7 +8,9 @@
       "email": "phpcrawl@cuab.de"
     }
   ],
-  "require": {},
+  "require": {
+    "php-curl-class/php-curl-class": "4.6.9"
+  },
   "autoload": {
     "psr-4": {
       "PHPCrawler\\": "libs/"

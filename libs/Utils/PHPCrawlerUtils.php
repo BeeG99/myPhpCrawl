@@ -1,5 +1,6 @@
 <?php
 namespace PHPCrawler\Utils;
+use Exception;
 use PHPCrawler\PHPCrawlerCookieDescriptor;
 use PHPCrawler\PHPCrawlerHTTPRequest;
 use PHPCrawler\PHPCrawlerURLDescriptor;

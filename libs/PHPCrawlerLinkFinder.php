@@ -185,7 +185,7 @@ class PHPCrawlerLinkFinder
 
             if (!empty($link_raw)) $this->addLinkToCache($link_raw, $linkcode, $linktext);
         }
-
+        unset($matches);
         // Second regex (everything that could be a link inside of <>-tags)
         preg_match_all("#<[^<>]*\s(?:" . $tag_regex_part . ")\s*=\s*" .
             "(?|\"([^\"]+)\"|'([^']+)'|([^\s><'\"]+))[^<>]*># is", $html_source, $matches);
