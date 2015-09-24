@@ -9,7 +9,9 @@
     }
   ],
   "require": {
-    "php-curl-class/php-curl-class": "4.6.9"
+    "php-64bit":"^5.5",
+    "lib-curl":"*",
+    "php-curl-class/php-curl-class": "^4.6"
   },
   "autoload": {
     "psr-4": {
